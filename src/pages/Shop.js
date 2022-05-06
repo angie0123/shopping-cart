@@ -5,7 +5,6 @@ const Shop = () => {
   const handleAddToCart = (id) => {
     const addedItem = shopItems.filter((item) => item.id === id);
     setCartItems([...cartItems, ...addedItem]);
-    console.log(cartItems);
   };
   const shopItems = [
     {
@@ -31,7 +30,7 @@ const Shop = () => {
   return (
     <div>
       <h1>Shop our items</h1>
-      <h2>Cart: </h2>
+      <h2>Cart: {cartItems.length}</h2>
       <ShopItems items={shopItems} handleAddToCart={handleAddToCart} />
     </div>
   );
