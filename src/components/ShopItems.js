@@ -1,10 +1,10 @@
 import ShopItem from './ShopItem';
 
-const ShopItems = ({ items }) => {
-  const list = items.map((item, index) => {
+const ShopItems = ({ items, handleAddToCart }) => {
+  const list = items.map((item) => {
     return (
-      <li key={index}>
-        <ShopItem item={item} />
+      <li key={item.id}>
+        <ShopItem item={item} handleAddToCart={handleAddToCart} />
       </li>
     );
   });

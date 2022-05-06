@@ -1,4 +1,4 @@
-const ShopItem = ({ item }) => {
+const ShopItem = ({ item, handleAddToCart }) => {
   return (
     <div>
       <img
@@ -9,6 +9,7 @@ const ShopItem = ({ item }) => {
       <div>
         {item.name} {item.price}
       </div>
+      <div onClick={() => handleAddToCart(item.id)}> Add To Cart </div>
     </div>
   );
 };
