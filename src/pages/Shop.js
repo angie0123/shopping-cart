@@ -1,5 +1,7 @@
+import ShopItems from '../components/ShopItems';
+
 const Shop = () => {
-  const storeItems = [
+  const shopItems = [
     {
       img: '/images/aloe.jpg',
       name: 'Aloe',
@@ -17,27 +19,10 @@ const Shop = () => {
     },
   ];
 
-  const list = storeItems.map((item, index) => {
-    return (
-      <li key={index}>
-        <div>
-          <img
-            style={{ width: '300px', height: '300px' }}
-            src={window.location.origin + item.img}
-            alt={item.name}
-          />
-          <div>
-            {item.name} {item.price}
-          </div>
-        </div>
-      </li>
-    );
-  });
-
   return (
     <div>
       <h1>Shop our items</h1>
-      <ul>{list}</ul>
+      <ShopItems items={shopItems} />
     </div>
   );
 };
