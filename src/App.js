@@ -6,10 +6,21 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState({ items: [], total: 0 });
   const handleAddToCart = (id) => {
-    const addedItem = shopItems.filter((item) => item.id === id);
-    setCartItems([...cartItems, ...addedItem]);
+    const [addedItem] = shopItems.filter((item) => item.id === id);
+    console.log(addedItem);
+    const cartHasItem = cart.items.filter((item) => item.id === id).length > 0;
+    const updatedCartItems = cartHasItem
+      ? cart.items.map((item) => {
+          if (item.id === id) {
+            item.amount = item.amount + 1;
+          }
+          return item;
+        })
+      : [...cart.items, { ...addedItem, amount: 1 }];
+
+    setCart({ items: updatedCartItems, total: cart.total + 1 });
   };
   const shopItems = [
     {
@@ -34,20 +45,20 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Nav itemsInCart={cartItems.length} />
+      <Nav itemsInCart={cart.total} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"
           element={
             <Shop
-              cartItems={cartItems}
+              cartItems={cart.items}
               shopItems={shopItems}
               handleAddToCart={handleAddToCart}
             />
           }
         />
-        <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+        <Route path="/cart" element={<Cart cartItems={cart.items} />} />
       </Routes>
     </BrowserRouter>
   );
