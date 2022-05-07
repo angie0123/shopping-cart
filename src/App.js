@@ -33,12 +33,15 @@ const App = () => {
     if (type === 'input') {
       updatedItem.amount = event.target.value;
     }
-    const updatedItems = cart.items.map((item) => {
-      if (item.id === id) {
-        return updatedItem;
-      }
-      return item;
-    });
+    const updatedItems =
+      updatedItem.amount === 0
+        ? cart.items.filter((item) => item.id !== id)
+        : cart.items.map((item) => {
+            if (item.id === id) {
+              return updatedItem;
+            }
+            return item;
+          });
     const updatedTotal = updatedItems.reduce(
       (acc, currentItem) => +acc + +currentItem.amount,
       0
