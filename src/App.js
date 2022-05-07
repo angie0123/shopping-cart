@@ -5,7 +5,7 @@ import Cart from './pages/Cart';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const RouteSwitch = () => {
+const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const handleAddToCart = (id) => {
     const addedItem = shopItems.filter((item) => item.id === id);
@@ -47,10 +47,10 @@ const RouteSwitch = () => {
             />
           }
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
-export default RouteSwitch;
+export default App;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-const Nav = () => {
+const Nav = ({ itemsInCart }) => {
   return (
     <nav>
       <ul>
@@ -10,7 +10,7 @@ const Nav = () => {
           <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="cart">Cart</Link>
+          <Link to="cart">Cart: {itemsInCart}</Link>
         </li>
       </ul>
     </nav>
