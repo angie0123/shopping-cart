@@ -1,4 +1,4 @@
-const CartItem = ({ item }) => {
+const CartItem = ({ item, inputChangeHandler }) => {
   return (
     <li key={item.id}>
       <img
@@ -8,6 +8,14 @@ const CartItem = ({ item }) => {
       />
       <div>{item.name}</div>
       <div>{item.price}</div>
+      <div> + </div>
+      <input
+        type="number"
+        value={item.amount}
+        min="0"
+        onInput={(event) => inputChangeHandler(event, item.id)}
+      ></input>
+      <div> - </div>
     </li>
   );
 };

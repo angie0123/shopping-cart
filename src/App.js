@@ -9,7 +9,6 @@ const App = () => {
   const [cart, setCart] = useState({ items: [], total: 0 });
   const handleAddToCart = (id) => {
     const [addedItem] = shopItems.filter((item) => item.id === id);
-    console.log(addedItem);
     const cartHasItem = cart.items.filter((item) => item.id === id).length > 0;
     const updatedCartItems = cartHasItem
       ? cart.items.map((item) => {
@@ -22,6 +21,26 @@ const App = () => {
 
     setCart({ items: updatedCartItems, total: cart.total + 1 });
   };
+
+  const handleCartInputChange = (event, id) => {
+    const [updatedItem] = cart.items.filter((item) => item.id === id);
+    updatedItem.amount = event.target.value;
+    const updatedItems = cart.items.map((item) => {
+      if (item.id === id) {
+        return updatedItem;
+      }
+      return item;
+    });
+    const updatedTotal = updatedItems.reduce(
+      (acc, currentItem) => +acc + +currentItem.amount,
+      0
+    );
+    setCart({
+      items: updatedItems,
+      total: updatedTotal,
+    });
+  };
+
   const shopItems = [
     {
       img: '/images/aloe.jpg',
@@ -58,7 +77,15 @@ const App = () => {
             />
           }
         />
-        <Route path="/cart" element={<Cart cartItems={cart.items} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cart.items}
+              inputChangeHandler={handleCartInputChange}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

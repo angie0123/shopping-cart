@@ -1,9 +1,12 @@
 import CartItems from '../components/CartItems';
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, inputChangeHandler }) => {
   return (
     <>
-      <CartItems cartItems={cartItems} />
+      <CartItems
+        cartItems={cartItems}
+        inputChangeHandler={inputChangeHandler}
+      />
     </>
   );
 };

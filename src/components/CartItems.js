@@ -1,8 +1,8 @@
 import CartItem from './CartItem';
 
-const CartItems = ({ cartItems }) => {
+const CartItems = ({ cartItems, inputChangeHandler }) => {
   const list = cartItems.map((item) => {
-    return <CartItem item={item} />;
+    return <CartItem item={item} inputChangeHandler={inputChangeHandler} />;
   });
   return <ul>{list}</ul>;
 };
