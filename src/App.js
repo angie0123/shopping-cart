@@ -22,9 +22,17 @@ const App = () => {
     setCart({ items: updatedCartItems, total: cart.total + 1 });
   };
 
-  const handleCartInputChange = (event, id) => {
+  const handleCartInputChange = (event, id, type) => {
     const [updatedItem] = cart.items.filter((item) => item.id === id);
-    updatedItem.amount = event.target.value;
+    if (type === 'increment') {
+      updatedItem.amount = +updatedItem.amount + 1;
+    }
+    if (type === 'decrement' && updatedItem.amount > 0) {
+      updatedItem.amount = +updatedItem.amount - 1;
+    }
+    if (type === 'input') {
+      updatedItem.amount = event.target.value;
+    }
     const updatedItems = cart.items.map((item) => {
       if (item.id === id) {
         return updatedItem;
