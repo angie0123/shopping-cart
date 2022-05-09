@@ -8,6 +8,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Futura;
+  --button-inactive: rgb(224, 219, 219);
+  --button-hover: rgb(32, 30, 30);
+}
+body {
+  letter-spacing: 0.3px;
 }
 
 a,
@@ -16,6 +21,10 @@ a:hover,
 a:active {
   text-decoration: none;
   color: black;
+}
+
+ul li {
+  list-style: none;
 }
 
 nav {
@@ -68,4 +77,44 @@ nav .bottom-section {
   width: 600px;
   height: 600px;
   object-fit: cover;
+}
+
+.main-content .category {
+  font-size: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 250px));
+  gap: 30px;
+}
+
+.product-grid img {
+  width: 250px;
+  height: 300px;
+}
+
+.product div {
+  margin-bottom: 5px;
+}
+
+.product .description {
+  text-align: center;
+}
+
+.button {
+  padding: 8px 16px;
+  background-color: var(--button-inactive);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--button-hover);
+  color: white;
 }

@@ -1,15 +1,15 @@
 const ShopItem = ({ item, handleAddToCart }) => {
   return (
-    <div>
-      <img
-        style={{ width: '300px', height: '300px' }}
-        src={window.location.origin + item.img}
-        alt={item.name}
-      />
-      <div>
-        {item.name} {item.price}
+    <div className="product">
+      <img src={window.location.origin + item.img} alt={item.name} />
+      <div className="description">
+        <div>{item.name}</div>
+        <div>{item.price}</div>
       </div>
-      <div onClick={() => handleAddToCart(item.id)}> Add To Cart </div>
+      <div className="button" onClick={() => handleAddToCart(item.id)}>
+        {' '}
+        Add To Cart{' '}
+      </div>
     </div>
   );
 };

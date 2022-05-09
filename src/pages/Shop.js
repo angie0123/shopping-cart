@@ -1,9 +1,9 @@
 import ShopItems from '../components/ShopItems';
 
-const Shop = ({ cartItems, shopItems, handleAddToCart }) => {
+const Shop = ({ shopItems, handleAddToCart }) => {
   return (
-    <div>
-      <h1>Shop our items</h1>
+    <div className="main-content">
+      <div className="category">All products</div>
       <ShopItems items={shopItems} handleAddToCart={handleAddToCart} />
     </div>
   );

@@ -72,6 +72,24 @@ const App = () => {
       price: '$24.99',
       id: 2,
     },
+    {
+      img: '/images/aloe.jpg',
+      name: 'Aloe',
+      price: '$34.99',
+      id: 3,
+    },
+    {
+      img: '/images/cactus.jpg',
+      name: 'Cactus',
+      price: '$29.99',
+      id: 4,
+    },
+    {
+      img: '/images/leafy.jpg',
+      name: 'Lauri Fern',
+      price: '$24.99',
+      id: 5,
+    },
   ];
 
   return (

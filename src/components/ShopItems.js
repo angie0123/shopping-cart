@@ -8,7 +8,7 @@ const ShopItems = ({ items, handleAddToCart }) => {
       </li>
     );
   });
-  return <ul>{list}</ul>;
+  return <ul className="product-grid">{list}</ul>;
 };
 
 export default ShopItems;
