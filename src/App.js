@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Cart from './pages/Cart';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './styles.css';
 
 const App = () => {
   const [cart, setCart] = useState({ items: [], total: 0 });
