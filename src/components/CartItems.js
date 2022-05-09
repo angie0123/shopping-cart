@@ -4,7 +4,7 @@ const CartItems = ({ cartItems, inputChangeHandler }) => {
   const list = cartItems.map((item) => {
     return (
       <li key={item.id}>
-        <CartItem item={item} inputChangeHandler={inputChangeHandler} />;
+        <CartItem item={item} inputChangeHandler={inputChangeHandler} />
       </li>
     );
   });
