@@ -9,3 +9,50 @@
   box-sizing: border-box;
   font-family: Futura;
 }
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  margin: 40px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+nav .top-section {
+  height: 50px;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.logo a {
+  padding-left: 1.2rem;
+}
+
+nav .top-section .right {
+  justify-self: self-end;
+}
+
+nav .bottom-section {
+  text-align: center;
+  height: 50px;
+  padding: 0 28px;
+  display: grid;
+  align-items: center;
+}
