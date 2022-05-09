@@ -1,6 +1,6 @@
 const CartItem = ({ item, inputChangeHandler }) => {
   return (
-    <li key={item.id}>
+    <>
       <img
         style={{ width: '150px', height: '150px' }}
         src={window.location.origin + item.img}
@@ -22,7 +22,7 @@ const CartItem = ({ item, inputChangeHandler }) => {
         {' '}
         -{' '}
       </div>
-    </li>
+    </>
   );
 };
 

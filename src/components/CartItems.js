@@ -1,13 +1,12 @@
 import CartItem from './CartItem';
 
-const CartItems = ({
-  cartItems,
-  inputChangeHandler,
-  incrementHandler,
-  decrementHandler,
-}) => {
+const CartItems = ({ cartItems, inputChangeHandler }) => {
   const list = cartItems.map((item) => {
-    return <CartItem item={item} inputChangeHandler={inputChangeHandler} />;
+    return (
+      <li key={item.id}>
+        <CartItem item={item} inputChangeHandler={inputChangeHandler} />;
+      </li>
+    );
   });
   return <ul>{list}</ul>;
 };
