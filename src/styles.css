@@ -56,3 +56,16 @@ nav .bottom-section {
   display: grid;
   align-items: center;
 }
+
+.main-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.main-content img.background {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
