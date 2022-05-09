@@ -2,6 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { screen, render } from '@testing-library/react';
 import CartItems from './CartItems';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockCartItems = [
   { amount: 1, id: 0, img: '/images/aloe.jpg', name: 'Aloe', price: '$39.99' },
@@ -27,5 +28,14 @@ describe('CartItems', () => {
     );
     const items = screen.getAllByTestId('cartItem');
     expect(items.length).toBe(2);
+  });
+  it('renders a message and link to Shop when the cart is empty', () => {
+    render(<CartItems cartItems={[]} inputChangeHandler={mockHandler} />, {
+      wrapper: BrowserRouter,
+    });
+    expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: 'Continue shopping' })
+    ).toBeInTheDocument();
   });
 });
