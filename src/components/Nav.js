@@ -1,14 +1,25 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 const Nav = ({ itemsInCart }) => {
   return (
     <nav>
       <section className="top-section">
-        <div>Search Icon</div>
+        <img
+          className="icon"
+          src={`${window.location.origin + "/icons/search.png"}`}
+          alt="search"
+        />
         <div className="logo">
           <Link to="/">Zen</Link>
         </div>
         <div className="right">
-          <Link to="/cart">Cart: {itemsInCart}</Link>
+          <Link to="/cart">
+            <img
+              className="icon"
+              src={`${window.location.origin + "/icons/shopping-cart.png"}`}
+              alt="cart"
+            />{" "}
+            {itemsInCart}
+          </Link>
         </div>
       </section>
       <section className="bottom-section">
