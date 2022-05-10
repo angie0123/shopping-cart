@@ -28,15 +28,15 @@ const Cart = ({ cartItems, inputChangeHandler }) => {
             <div>$30.99</div>
           </div>
         </div>
-        <div className="button">Checkout</div>
+        <div className="button dark large">Checkout</div>
       </div>
     </div>
   );
 
   const emptyCart = (
     <>
-      <div className="empty-message">Your cart is empty</div>
-      <div className="button">
+      <div className="empty-message heading">Your cart is empty</div>
+      <div className="button dark large">
         <Link to="/shop">Continue shopping</Link>
       </div>
     </>
